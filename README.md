@@ -52,6 +52,14 @@ docker run -d -v /var/run/docker.sock:/var/run/docker.sock -e GRACE_PERIOD_SECON
 
 This setting also prevents the removal of images that have been created less than `GRACE_PERIOD_SECONDS` seconds ago.
 
+### Cleaning up orphaned container volumes
+
+Orphaned volumes that were created by containers that no longer exist can, over time, grow to take up a significant amount of disk space. By default, this process will leave any orphaned volumes untouched. However, to instruct the process to automatically clean up any dangling volumes using a `docker volume rm $(docker volume ls -qf dangling=true)` call after the `docker-gc` process has been executed, simply set the `CLEAN_UP_VOLUMES` value to `1`.
+
+```
+docker run -d -v /var/run/docker.sock:/var/run/docker.sock -e CLEAN_UP_VOLUMES=1 clockworksoul/docker-gc-cron
+```
+
 ### Dry run
 By default, docker-gc will proceed with deletion of containers and images. To test your command-line options set the `DRY_RUN` variable to override this default.
 

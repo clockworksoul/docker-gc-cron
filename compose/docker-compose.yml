@@ -27,6 +27,10 @@ dockergc:
         # By default, docker-gc will proceed with deletion of containers and images. To test your 
         # settings set the DRY_RUN variable to override this default
         - DRY_RUN=0
+
+        # By default, this process will leave any dangling volumes untouched. To instruct the 
+        # process to automatically clean up any dangling volumes, simply set this value to 1.
+        - CLEAN_UP_VOLUMES=1
         
         # If you don't like all your log output and cron times being in UTC, you can set the 
         # TZONE variable to override the default.
