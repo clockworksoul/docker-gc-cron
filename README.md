@@ -5,13 +5,6 @@ The `docker-gc-cron` container will periodically run the very excellent [Spotify
 By default, the process will run each night at midnight, but the timing and other behaviors can be precisely specified using standard `cron` syntax. A `docker-compose.yml` file for this purpose can be found in the `compose` directory of this repository to simplify execution.
 
 
-## Supported Environmental Settings
-
-The container understands all of the settings that are supported by [docker-gc](https://github.com/spotify/docker-gc), as well as additional settings that can be used to modify the cleanup frequency.
-
-Much of the following documentation is borrowed and modified directly from the [docker-gc README](https://github.com/spotify/docker-gc/blob/master/README.md#excluding-images-from-garbage-collection).
-
-
 ## Installation tl;dr
 
 ```
@@ -22,10 +15,15 @@ $ docker-compose up -d
 
 This will pull and execute a `docker-gc-cron` image associated with your installed Docker daemon. By default, the garbage collection process will execute nightly at midnight, but this can be easily changed by modifying the `CRON` property (see below).
 
-Yes, the `docker-gc-exclude` _is_ necessary.
+Yes, the `docker-gc-exclude` _is_ necessary when using this `docker-compose.yml` file.
 
 
-## How to use
+## Supported Environmental Settings
+
+The container understands all of the settings that are supported by [docker-gc](https://github.com/spotify/docker-gc), as well as additional settings that can be used to modify the cleanup frequency.
+
+Much of the following documentation is borrowed and modified directly from the [docker-gc README](https://github.com/spotify/docker-gc/blob/master/README.md#excluding-images-from-garbage-collection).
+
 
 All of the following environmental variables can also be used by getting and modifying the `docker-compose.yml` file.
 
