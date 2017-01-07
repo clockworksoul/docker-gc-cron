@@ -33,6 +33,5 @@ dockergc:
         - CLEAN_UP_VOLUMES=1
         
         # If you don't like all your log output and cron times being in UTC, you can set the 
-        # TZONE variable to override the default.
-        - TZONE=America/New_York
-
+        # TZ variable to override the default.
+        - TZ=America/New_York

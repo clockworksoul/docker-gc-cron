@@ -37,7 +37,4 @@ then
    GC_ARGS="$GC_ARGS CLEAN_UP_VOLUMES=$CLEAN_UP_VOLUMES"
 fi
 
-echo -e "$CRON" "root $GC_ARGS sh /root/executed-by-cron.sh" '>> /var/log/cron.log 2>&1'"\n# An empty line is required at the end of this file for a valid cron file.\n" > /etc/cron.d/docker-gc-cron
-
-chmod 0644 /etc/cron.d/docker-gc-cron
-
+echo -e "$CRON" "$GC_ARGS sh /executed-by-cron.sh" '>> /var/log/cron.log 2>&1'"\n" > crontab.tmp
