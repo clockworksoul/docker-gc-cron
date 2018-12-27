@@ -47,4 +47,14 @@ then
    GC_ARGS="$GC_ARGS MINIMUM_IMAGES_TO_SAVE=$MINIMUM_IMAGES_TO_SAVE"
 fi
 
+if [ "$REMOVE_VOLUMES" ]
+then
+   GC_ARGS="$GC_ARGS REMOVE_VOLUMES=$REMOVE_VOLUMES"
+fi
+
+if [ "$VOLUME_DELETE_ONLY_DRIVER" ]
+then
+   GC_ARGS="$GC_ARGS VOLUME_DELETE_ONLY_DRIVER=$VOLUME_DELETE_ONLY_DRIVER"
+fi
+
 echo -e "$CRON" "$GC_ARGS sh /executed-by-cron.sh" '>> /var/log/cron.log 2>&1'"\n" > crontab.tmp
