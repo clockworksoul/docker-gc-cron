@@ -8,7 +8,7 @@ dockergc:
         - ./docker-gc-exclude:/etc/docker-gc-exclude
     environment:
         # By default, docker-gc is run every night at midnight. Change this variable to override.
-        - CRON=0 0 * * *
+        - CRON=0 9,21 * * *
 
         # By default, docker will not remove an image if it is tagged in multiple repositories. If
         # you have a server running docker where this is the case, for example in CI environments 
@@ -18,7 +18,7 @@ dockergc:
         # By default, if an error is encountered when cleaning up a container, Docker will report the
         # error back and leave it on disk. This can sometimes lead to containers accumulating. If
         # you run into this issue, you can force the removal of the container by setting this flag.
-        - FORCE_CONTAINER_REMOVAL=0
+        - FORCE_CONTAINER_REMOVAL=1
 
         # By default, docker-gc will not remove a container if it exited less than 1 hour ago.
         # Set the GRACE_PERIOD_SECONDS variable to override this default.

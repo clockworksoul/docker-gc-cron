@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEFAULT_CRON="0 0 * * *"
+DEFAULT_CRON="0 9 * * *"
 
 if [ "$CRON" ]
 then
@@ -12,9 +12,19 @@ fi
 
 GC_ARGS=""
 
+if [ "$CLEAN_UP_VOLUMES" ]
+then
+   GC_ARGS="$GC_ARGS CLEAN_UP_VOLUMES=$CLEAN_UP_VOLUMES"
+fi
+
 if [ "$DRY_RUN" ]
 then
    GC_ARGS="$GC_ARGS DRY_RUN=$DRY_RUN"
+fi
+
+if [ "$EXCLUDE_VOLUMES_IDS_FILE" ]
+then
+   GC_ARGS="$GC_ARGS EXCLUDE_VOLUMES_IDS_FILE=$EXCLUDE_VOLUMES_IDS_FILE"
 fi
 
 if [ "$FORCE_CONTAINER_REMOVAL" ]
@@ -32,9 +42,9 @@ then
    GC_ARGS="$GC_ARGS GRACE_PERIOD_SECONDS=$GRACE_PERIOD_SECONDS"
 fi
 
-if [ "$CLEAN_UP_VOLUMES" ]
+if [ "$MINIMUM_IMAGES_TO_SAVE" ]
 then
-   GC_ARGS="$GC_ARGS CLEAN_UP_VOLUMES=$CLEAN_UP_VOLUMES"
+   GC_ARGS="$GC_ARGS MINIMUM_IMAGES_TO_SAVE=$MINIMUM_IMAGES_TO_SAVE"
 fi
 
 echo -e "$CRON" "$GC_ARGS sh /executed-by-cron.sh" '>> /var/log/cron.log 2>&1'"\n" > crontab.tmp

@@ -6,5 +6,6 @@
 #
 ####################################################################################################
 
-clockworksoul/docker-gc-cron:latest
-e61267dbe31b    
+clockworksoul/docker-gc-cron:latest    
+
+jupyter/tensorflow-notebook:latest
