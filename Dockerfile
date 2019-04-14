@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.9
 
 MAINTAINER Matt Titmus <matthew.titmus@gmail.com>
 
