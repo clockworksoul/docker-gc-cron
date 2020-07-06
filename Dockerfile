@@ -1,6 +1,8 @@
-FROM alpine:3.9
+FROM alpine:3.12
 
-MAINTAINER Matt Titmus <matthew.titmus@gmail.com>
+LABEL maintainer="Matt Titmus <matthew.titmus@gmail.com>"
+LABEL date="2020-07-06"
+LABEL com.example.version.is-production=""
 
 ARG DOCKER_VERSION=1.11.1
 
