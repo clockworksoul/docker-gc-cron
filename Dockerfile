@@ -6,7 +6,7 @@ LABEL date="2020-07-06"
 ARG DOCKER_VERSION=1.11.1
 
 # We get curl so that we can avoid a separate ADD to fetch the Docker binary, and then we'll remove it.
-# Blatantly "borrowed" from Spotify's spotify/docker-gc image. Thanks, guys!
+# Blatantly "borrowed" from Spotify's spotify/docker-gc image. Thanks, folks!
 RUN apk --update add bash curl tzdata \
   && cd /tmp/ \
   && curl -sSL -O https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz \
