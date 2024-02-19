@@ -1,7 +1,7 @@
-FROM alpine:3.13
+FROM alpine:3.19
 
 LABEL maintainer="Matt Titmus <matthew.titmus@gmail.com>"
-LABEL date="2021-05-19"
+LABEL date="2024-02-19"
 
 ARG DOCKER_VERSION=1.11.1
 
