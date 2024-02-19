@@ -2,7 +2,7 @@ version: "3"
 
 services:
   gc:
-    image: clockworksoul/docker-gc-cron:latest
+    image: clockworksoul/docker-gc-cron:20240219
     container_name: docker-gc
     network_mode: "none"
     restart: always
