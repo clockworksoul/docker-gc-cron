@@ -2,7 +2,7 @@ version: "3"
 
 services:
   gc:
-    image: scartalune/docker-gc-cron:latest
+    image: clockworksoul/docker-gc-cron:20240219
     container_name: docker-gc
     network_mode: "none"
     restart: always
@@ -37,4 +37,4 @@ services:
       
       # If you don't like all your log output and cron times being in UTC, you can set the
       # TZ variable to override the default.
-      - TZ=Europe/Berlin
+      - TZ=America/New_York
