@@ -1,7 +1,7 @@
 FROM alpine:3.19
 
 LABEL maintainer="Eibo Richter <eibo.richter@gmail.com>"
-LABEL date="2024-03-15"
+LABEL date="2024-03-26"
 
 ARG DOCKER_VERSION=1.11.1
 
