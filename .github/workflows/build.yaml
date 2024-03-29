@@ -28,4 +28,3 @@ jobs:
           push: true
           tags: scartalune/docker-gc-cron:0.0.3
           labels: org.opencontainers.image.source=https://github.com/Smeeth/docker-gc-cron
-          
