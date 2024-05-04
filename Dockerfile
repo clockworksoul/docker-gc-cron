@@ -3,7 +3,7 @@ FROM alpine:3.19
 LABEL maintainer="Matt Titmus <matthew.titmus@gmail.com>"
 LABEL date="2024-02-19"
 
-ARG DOCKER_VERSION=1.11.1
+ARG DOCKER_VERSION=1.12.0
 
 # We get curl so that we can avoid a separate ADD to fetch the Docker binary, and then we'll remove it.
 # Blatantly "borrowed" from Spotify's spotify/docker-gc image. Thanks, folks!
