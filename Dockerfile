@@ -38,7 +38,4 @@ RUN chmod 0755 /usr/bin/docker-gc \
   && chmod 0755 /executed-by-cron.sh \
   && chmod 0644 /etc/docker-gc-exclude 
 
-CMD /generate-crontab.sh > /var/log/cron.log 2>&1 \
-  && crontab crontab.tmp \
-  && /usr/sbin/crond \
-  && tail -f /var/log/cron.log
+CMD ["/bin/sh", "-c", "/generate-crontab.sh > /var/log/cron.log 2>&1 && crontab crontab.tmp && /usr/sbin/crond && tail -f /var/log/cron.log"]
